@@ -1,0 +1,42 @@
+{
+  "name": "@ngxmc/color-picker",
+  "version": "19.0.0",
+  "description": "Angular Material Color Picker",
+  "author": "HO Hong Quan",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/h2qutc/angular-material-components.git"
+  },
+  "bugs": {
+    "url": "https://github.com/h2qutc/angular-material-components/issues"
+  },
+  "homepage": "https://github.com/h2qutc/angular-material-components",
+  "keywords": [
+    "angular",
+    "angular2",
+    "angular 12",
+    "angular 13",
+    "angular 14",
+    "angular 15",
+    "angular 16",
+    "angular 17",
+    "angular 18",
+    "angular 19",
+    "angular-material",
+    "angular material color picker",
+    "color-picker",
+    "colorpicker",
+    "ngx-mat",
+    "ngx-mat-color-picker",
+    "ngx-material-color-picker"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@angular/platform-browser": "^19.0.0",
+    "@angular/common": "^19.0.0",
+    "@angular/core": "^19.0.0",
+    "@angular/forms": "^19.0.0",
+    "@angular/material": "^19.0.0",
+    "@angular/cdk": "^19.0.0"
+  }
+}

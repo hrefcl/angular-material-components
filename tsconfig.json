@@ -1,0 +1,51 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "declaration": false,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "ES2022",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es5",
+      "es2015",
+      "dom"
+    ],
+    "types": [
+      "node"
+    ],
+    "paths": {
+      "@ngxmc/*": [
+        "dist/@ngxmc/*"
+      ],
+      "@ngxmc/color-picker": [
+        "dist/@ngxmc/color-picker"
+      ],
+      "@ngxmc/color-picker/*": [
+        "dist/@ngxmc/color-picker/*"
+      ],
+      "@ngxmc/datetime-picker": [
+        "dist/@ngxmc/datetime-picker"
+      ],
+      "@ngxmc/datetime-picker/*": [
+        "dist/@ngxmc/datetime-picker/*"
+      ],
+      "file-input": [
+        "dist/@ngxmc/file-input"
+      ],
+      "file-input/*": [
+        "dist/@ngxmc/file-input/*"
+      ]
+    },
+    "useDefineForClassFields": false,
+    "skipLibCheck": true
+  }
+}
