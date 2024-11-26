@@ -1,11 +1,11 @@
 {
-  "name": "@ngxmc/color-picker",
+  "name": "@href/color-picker",
   "version": "19.0.0",
   "description": "Angular Material Color Picker",
   "author": "HO Hong Quan",
   "repository": {
     "type": "git",
-    "url": "https://github.com/h2qutc/angular-material-components.git"
+    "url": "https://github.com/hrefcl/angular-material-components"
   },
   "bugs": {
     "url": "https://github.com/h2qutc/angular-material-components/issues"

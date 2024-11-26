@@ -1,11 +1,11 @@
 {
-  "name": "@ngxmc/amc",
+  "name": "@href/amc",
   "version": "19.0.0",
   "description": "Angular Material Datetime Picker",
   "author": "HO Hong Quan",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/h2qutc/angular-material-components.git"
+    "url": "git+https://github.com/hrefcl/angular-material-components"
   },
   "bugs": {
     "url": "https://github.com/h2qutc/angular-material-components/issues"
@@ -44,10 +44,10 @@
     "build:moment-adapter": "ng build NgxMatMomentAdapter",
     "build:color-picker": "ng build NgxMatColorPicker",
     "build:file-input": "ng build NgxMatFileInput",
-    "publish:datetime-picker": "ng build NgxMatDatetimePicker && cd dist/@ngxmc/datetime-picker && npm publish --access public && cd .. && cd .. && cd ..",
-    "publish:moment-adapter": "ng build NgxMatMomentAdapter && cd dist/@ngxmc/moment-adapter && npm publish --access public  && cd .. && cd .. && cd ..",
-    "publish:color-picker": "ng build NgxMatColorPicker && cd dist/@ngxmc/color-picker && npm publish --access public  && cd .. && cd .. && cd ..",
-    "publish:file-input": "ng build NgxMatFileInput && cd dist/@ngxmc/file-input && npm publish --access public  && cd .. && cd .. && cd ..",
+    "publish:datetime-picker": "ng build NgxMatDatetimePicker && cd dist/@href/datetime-picker && npm publish --access public && cd .. && cd .. && cd ..",
+    "publish:moment-adapter": "ng build NgxMatMomentAdapter && cd dist/@href/moment-adapter && npm publish --access public  && cd .. && cd .. && cd ..",
+    "publish:color-picker": "ng build NgxMatColorPicker && cd dist/@href/color-picker && npm publish --access public  && cd .. && cd .. && cd ..",
+    "publish:file-input": "ng build NgxMatFileInput && cd dist/@href/file-input && npm publish --access public  && cd .. && cd .. && cd ..",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",

@@ -1,4 +1,4 @@
-import { NgxMatDateFormats } from '@ngxmc/datetime-picker';
+import { NgxMatDateFormats } from '@href/datetime-picker';
 
 const DEFAULT_DATE_INPUT = 'l, LTS';
 

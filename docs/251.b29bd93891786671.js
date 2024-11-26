@@ -2294,10 +2294,10 @@
             (this.code3 =
               '<mat-form-field>\n  <input matInput [ngxMatColorPicker]="picker" [formControl]="colorCtr" [disabled]="disabled">\n  <ngx-mat-color-toggle matSuffix [for]="picker"></ngx-mat-color-toggle>\n  <ngx-mat-color-picker #picker [touchUi]="touchUi" [color]="color"></ngx-mat-color-picker>\n</mat-form-field>'),
             (this.code6 =
-              "\nimport { Color } from '@ngxmc/color-picker';\ncolorCtr: AbstractControl = new FormControl(new Color(255, 243, 0), [Validators.required]);"),
-            (this.code1 = 'npm install --save @ngxmc/color-picker'),
+              "\nimport { Color } from '@href/color-picker';\ncolorCtr: AbstractControl = new FormControl(new Color(255, 243, 0), [Validators.required]);"),
+            (this.code1 = 'npm install --save @href/color-picker'),
             (this.code2 =
-              "import { MAT_COLOR_FORMATS, NgxMatColorPickerModule, NGX_MAT_COLOR_FORMATS } \n  from '@ngxmc/color-picker'\n\n  @NgModule({\n    ...\n    imports: [\n         ...\n         NgxMatColorPickerModule\n    ],\n    providers: [\n     { provide: MAT_COLOR_FORMATS, useValue: NGX_MAT_COLOR_FORMATS }\n    ],\n    ...\n })\n export class AppModule { }"),
+              "import { MAT_COLOR_FORMATS, NgxMatColorPickerModule, NGX_MAT_COLOR_FORMATS } \n  from '@href/color-picker'\n\n  @NgModule({\n    ...\n    imports: [\n         ...\n         NgxMatColorPickerModule\n    ],\n    providers: [\n     { provide: MAT_COLOR_FORMATS, useValue: NGX_MAT_COLOR_FORMATS }\n    ],\n    ...\n })\n export class AppModule { }"),
             (this.code4 =
               "export const CUSTOM_MAT_COLOR_FORMATS: MatColorFormats = {\n    display: {\n        colorInput: 'hex'\n    }\n}\n\n@NgModule({\n    ...\n    providers: [\n      { provide: MAT_COLOR_FORMATS, useValue: CUSTOM_MAT_COLOR_FORMATS }\n    ],\n    ...\n  })\nexport class AppModule { }"),
             (this.code5 =
@@ -2333,7 +2333,7 @@
               'width',
               '150px !important',
             ],
-            ['href', 'https://www.npmjs.com/package/@ngxmc/color-picker', 'target', '_blank'],
+            ['href', 'https://www.npmjs.com/package/@href/color-picker', 'target', '_blank'],
             ['src', 'https://badge.fury.io/js/%40angular-material-components%2Fcolor-picker.svg'],
             ['ngxMatHighlight', ''],
             ['ngxMatHighlight', '', 1, 'language-typescript'],
@@ -2374,7 +2374,7 @@
                 t._UZ(5, 'img', 3),
                 t.qZA(),
                 t.TgZ(6, 'h1'),
-                t._uU(7, 'API reference for @ngxmc/color-picker'),
+                t._uU(7, 'API reference for @href/color-picker'),
                 t.qZA(),
                 t.TgZ(8, 'h2'),
                 t._uU(9, 'Getting started'),
