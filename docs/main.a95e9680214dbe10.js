@@ -5052,7 +5052,7 @@
               'sidebar-item',
             ],
             [1, 'app-content'],
-            ['mat-button', '', 'href', 'https://github.com/h2qutc/angular-material-components'],
+            ['mat-button', '', 'href', 'https://github.com/hrefcl/angular-material-components'],
             ['src', './assets/GitHub-Mark-Light-32px.png'],
           ],
           template: function (u, o) {
@@ -5151,8 +5151,8 @@
             ['href', 'https://www.npmjs.com/package/@href/datetime-picker'],
             ['href', 'https://www.npmjs.com/package/@href/color-picker'],
             ['href', 'https://www.npmjs.com/package/@href/file-input'],
-            ['href', 'https://github.com/h2qutc/angular-material-components/issues'],
-            ['href', 'https://github.com/h2qutc/angular-material-components'],
+            ['href', 'https://github.com/hrefcl/angular-material-components/issues'],
+            ['href', 'https://github.com/hrefcl/angular-material-components'],
             ['href', 'https://www.buymeacoffee.com/h2qutc', 'target', '_blank'],
             [
               'src',
