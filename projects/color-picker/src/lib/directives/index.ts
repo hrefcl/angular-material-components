@@ -1,1 +1,1 @@
-export * from './numeric-color-input.directive';
+export * from "./numeric-color-input.directive";

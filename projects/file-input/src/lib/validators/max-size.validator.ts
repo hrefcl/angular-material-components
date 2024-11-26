@@ -1,4 +1,4 @@
-import { AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
+import { AbstractControl, ValidationErrors, ValidatorFn } from "@angular/forms";
 
 /**
  * Validator for size of file
@@ -8,7 +8,7 @@ export function MaxSizeValidator(max: number): ValidatorFn {
   return (ctrl: AbstractControl): ValidationErrors | null => {
     max = Number(max);
     if (isNaN(max)) {
-      throw 'MaxSizeValidator: max of size of file is invalid';
+      throw "MaxSizeValidator: max of size of file is invalid";
     }
     if (!ctrl.value) return null;
     let files: File[] = ctrl.value;

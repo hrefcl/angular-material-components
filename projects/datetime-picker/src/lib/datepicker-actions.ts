@@ -1,4 +1,4 @@
-import { TemplatePortal } from '@angular/cdk/portal';
+import { TemplatePortal } from "@angular/cdk/portal";
 import {
   AfterViewInit,
   ChangeDetectionStrategy,
@@ -11,18 +11,24 @@ import {
   ViewEncapsulation,
   booleanAttribute,
   viewChild,
-} from '@angular/core';
-import { NgxMatDatepickerBase, NgxMatDatepickerControl } from './datepicker-base';
+} from "@angular/core";
+import {
+  NgxMatDatepickerBase,
+  NgxMatDatepickerControl,
+} from "./datepicker-base";
 
 /** Button that will close the datepicker and assign the current selection to the data model. */
 @Directive({
-  selector: '[ngxMatDatepickerApply], [ngxMatDateRangePickerApply]',
-  host: { '(click)': '_applySelection()' },
+  selector: "[ngxMatDatepickerApply], [ngxMatDateRangePickerApply]",
+  host: { "(click)": "_applySelection()" },
   standalone: true,
 })
 export class NgxMatDatepickerApply {
   constructor(
-    public readonly _datepicker: NgxMatDatepickerBase<NgxMatDatepickerControl<any>, unknown>,
+    public readonly _datepicker: NgxMatDatepickerBase<
+      NgxMatDatepickerControl<any>,
+      unknown
+    >,
   ) {}
 
   _applySelection() {
@@ -32,13 +38,16 @@ export class NgxMatDatepickerApply {
 }
 
 @Directive({
-  selector: '[ngxMatDatepickerClear], [ngxMatDateRangePickerClear]',
-  host: { '(click)': '_clearSelection()' },
+  selector: "[ngxMatDatepickerClear], [ngxMatDateRangePickerClear]",
+  host: { "(click)": "_clearSelection()" },
   standalone: true,
 })
 export class NgxMatDatepickerClear {
   constructor(
-    public readonly _datepicker: NgxMatDatepickerBase<NgxMatDatepickerControl<any>, unknown>,
+    public readonly _datepicker: NgxMatDatepickerBase<
+      NgxMatDatepickerControl<any>,
+      unknown
+    >,
   ) {}
 
   @Input({
@@ -56,13 +65,16 @@ export class NgxMatDatepickerClear {
 
 /** Button that will close the datepicker and discard the current selection. */
 @Directive({
-  selector: '[ngxMatDatepickerCancel], [ngxMatDateRangePickerCancel]',
-  host: { '(click)': '_datepicker.close()' },
+  selector: "[ngxMatDatepickerCancel], [ngxMatDateRangePickerCancel]",
+  host: { "(click)": "_datepicker.close()" },
   standalone: true,
 })
 export class NgxMatDatepickerCancel {
   constructor(
-    public readonly _datepicker: NgxMatDatepickerBase<NgxMatDatepickerControl<any>, unknown>,
+    public readonly _datepicker: NgxMatDatepickerBase<
+      NgxMatDatepickerControl<any>,
+      unknown
+    >,
   ) {}
 }
 
@@ -71,8 +83,8 @@ export class NgxMatDatepickerCancel {
  * to the bottom of a datepicker or date range picker.
  */
 @Component({
-  selector: 'ngx-mat-datepicker-actions, ngx-mat-date-range-picker-actions',
-  styleUrls: ['datepicker-actions.scss'],
+  selector: "ngx-mat-datepicker-actions, ngx-mat-date-range-picker-actions",
+  styleUrls: ["datepicker-actions.scss"],
   template: `
     <ng-template>
       <div class="mat-datepicker-actions">
@@ -89,7 +101,10 @@ export class NgxMatDatepickerActions implements AfterViewInit, OnDestroy {
   private _portal: TemplatePortal;
 
   constructor(
-    private _datepicker: NgxMatDatepickerBase<NgxMatDatepickerControl<any>, unknown>,
+    private _datepicker: NgxMatDatepickerBase<
+      NgxMatDatepickerControl<any>,
+      unknown
+    >,
     private _viewContainerRef: ViewContainerRef,
   ) {}
 

@@ -9,8 +9,8 @@ export const LIMIT_TIMES = {
 };
 
 export const MERIDIANS = {
-  AM: 'AM',
-  PM: 'PM',
+  AM: "AM",
+  PM: "PM",
 };
 
 export const DEFAULT_STEP = 1;

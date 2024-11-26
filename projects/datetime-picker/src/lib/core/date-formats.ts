@@ -1,4 +1,4 @@
-import { InjectionToken } from '@angular/core';
+import { InjectionToken } from "@angular/core";
 
 export type NgxMatDateFormats = {
   parse: {
@@ -13,4 +13,6 @@ export type NgxMatDateFormats = {
   };
 };
 
-export const NGX_MAT_DATE_FORMATS = new InjectionToken<NgxMatDateFormats>('ngx-mat-date-formats');
+export const NGX_MAT_DATE_FORMATS = new InjectionToken<NgxMatDateFormats>(
+  "ngx-mat-date-formats",
+);

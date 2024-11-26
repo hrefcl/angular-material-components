@@ -1,6 +1,6 @@
-import { NgxMatDateFormats } from '@href/datetime-picker';
+import { NgxMatDateFormats } from "@href/datetime-picker";
 
-const DEFAULT_DATE_INPUT = 'l, LTS';
+const DEFAULT_DATE_INPUT = "l, LTS";
 
 export const NGX_MAT_MOMENT_FORMATS: NgxMatDateFormats = {
   parse: {
@@ -8,8 +8,8 @@ export const NGX_MAT_MOMENT_FORMATS: NgxMatDateFormats = {
   },
   display: {
     dateInput: DEFAULT_DATE_INPUT,
-    monthYearLabel: 'MMM YYYY',
-    dateA11yLabel: 'LL',
-    monthYearA11yLabel: 'MMMM YYYY',
+    monthYearLabel: "MMM YYYY",
+    dateA11yLabel: "LL",
+    monthYearA11yLabel: "MMMM YYYY",
   },
 };

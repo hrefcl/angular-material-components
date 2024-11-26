@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
-import { stringInputToObject } from '../helpers';
-import { Color, ColorInputFormat } from '../models';
+import { Injectable } from "@angular/core";
+import { stringInputToObject } from "../helpers";
+import { Color, ColorInputFormat } from "../models";
 
 @Injectable()
 export class ColorAdapter {

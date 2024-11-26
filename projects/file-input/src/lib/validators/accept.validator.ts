@@ -1,4 +1,4 @@
-import { AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
+import { AbstractControl, ValidationErrors, ValidatorFn } from "@angular/forms";
 
 /**
  * Validator for input file accept
@@ -7,7 +7,7 @@ import { AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
 export function AcceptValidator(accept: string): ValidatorFn {
   return (ctrl: AbstractControl): ValidationErrors | null => {
     if (!accept) {
-      throw 'AcceptValidator: allowable type of file can not be empty';
+      throw "AcceptValidator: allowable type of file can not be empty";
     }
 
     if (ctrl.value == null) return null;

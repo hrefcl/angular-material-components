@@ -1,4 +1,4 @@
-import { BooleanInput, coerceBooleanProperty } from '@angular/cdk/coercion';
+import { BooleanInput, coerceBooleanProperty } from "@angular/cdk/coercion";
 import {
   AfterContentInit,
   Attribute,
@@ -13,37 +13,40 @@ import {
   input,
   untracked,
   viewChild,
-} from '@angular/core';
-import { MatButton, MatIconButton } from '@angular/material/button';
-import { Observable, Subscription, merge, of as observableOf } from 'rxjs';
-import { NgxMatDatepickerControl, NgxMatDatepickerPanel } from './datepicker-base';
-import { NgxMatDatepickerIntl } from './datepicker-intl';
+} from "@angular/core";
+import { MatButton, MatIconButton } from "@angular/material/button";
+import { Observable, Subscription, merge, of as observableOf } from "rxjs";
+import {
+  NgxMatDatepickerControl,
+  NgxMatDatepickerPanel,
+} from "./datepicker-base";
+import { NgxMatDatepickerIntl } from "./datepicker-intl";
 
 /** Can be used to override the icon of a `matDatepickerToggle`. */
 @Directive({
-  selector: '[ngxMatDatepickerToggleIcon]',
+  selector: "[ngxMatDatepickerToggleIcon]",
   standalone: true,
 })
 export class NgxMatDatepickerToggleIcon {}
 
 @Component({
-  selector: 'ngx-mat-datepicker-toggle',
-  templateUrl: 'datepicker-toggle.html',
-  styleUrls: ['datepicker-toggle.scss'],
+  selector: "ngx-mat-datepicker-toggle",
+  templateUrl: "datepicker-toggle.html",
+  styleUrls: ["datepicker-toggle.scss"],
   host: {
-    class: 'mat-datepicker-toggle',
-    '[attr.tabindex]': 'null',
-    '[class.mat-datepicker-toggle-active]': 'datepicker && datepicker.opened',
-    '[class.mat-accent]': 'datepicker && datepicker.color === "accent"',
-    '[class.mat-warn]': 'datepicker && datepicker.color === "warn"',
+    class: "mat-datepicker-toggle",
+    "[attr.tabindex]": "null",
+    "[class.mat-datepicker-toggle-active]": "datepicker && datepicker.opened",
+    "[class.mat-accent]": 'datepicker && datepicker.color === "accent"',
+    "[class.mat-warn]": 'datepicker && datepicker.color === "warn"',
     // Used by the test harness to tie this toggle to its datepicker.
-    '[attr.data-mat-calendar]': 'datepicker ? datepicker.id : null',
+    "[attr.data-mat-calendar]": "datepicker ? datepicker.id : null",
     // Bind the `click` on the host, rather than the inner `button`, so that we can call
     // `stopPropagation` on it without affecting the user's `click` handlers. We need to stop
     // it so that the input doesn't get focused automatically by the form field (See #21836).
-    '(click)': '_open($event)',
+    "(click)": "_open($event)",
   },
-  exportAs: 'ngxMatDatepickerToggle',
+  exportAs: "ngxMatDatepickerToggle",
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [MatIconButton],
@@ -52,8 +55,10 @@ export class NgxMatDatepickerToggle<D> implements AfterContentInit, OnDestroy {
   private _stateChanges = Subscription.EMPTY;
 
   /** Datepicker instance that the button will toggle. */
-  readonly datepicker = input<NgxMatDatepickerPanel<NgxMatDatepickerControl<any>, D>>(undefined, {
-    alias: 'for',
+  readonly datepicker = input<
+    NgxMatDatepickerPanel<NgxMatDatepickerControl<any>, D>
+  >(undefined, {
+    alias: "for",
   });
 
   @Input()
@@ -61,7 +66,7 @@ export class NgxMatDatepickerToggle<D> implements AfterContentInit, OnDestroy {
   tabIndex: number | null = null;
 
   /** Screen-reader label for the button. */
-  readonly ariaLabel = input<string>(undefined, { alias: 'aria-label' });
+  readonly ariaLabel = input<string>(undefined, { alias: "aria-label" });
 
   /** Whether the toggle button is disabled. */
   @Input()
@@ -81,15 +86,16 @@ export class NgxMatDatepickerToggle<D> implements AfterContentInit, OnDestroy {
   disableRipple = input<boolean>();
 
   /** Underlying button element. */
-  _button = viewChild<MatButton>('button');
+  _button = viewChild<MatButton>("button");
 
   constructor(
     public _intl: NgxMatDatepickerIntl,
     private _changeDetectorRef: ChangeDetectorRef,
-    @Attribute('tabindex') defaultTabIndex: string,
+    @Attribute("tabindex") defaultTabIndex: string,
   ) {
     const parsedTabIndex = Number(defaultTabIndex);
-    this.tabIndex = parsedTabIndex || parsedTabIndex === 0 ? parsedTabIndex : null;
+    this.tabIndex =
+      parsedTabIndex || parsedTabIndex === 0 ? parsedTabIndex : null;
 
     effect(() => {
       this.datepicker();

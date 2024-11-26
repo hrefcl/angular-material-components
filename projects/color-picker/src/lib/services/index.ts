@@ -1,2 +1,2 @@
-export * from './color-adapter';
-export * from './color-formats';
+export * from "./color-adapter";
+export * from "./color-formats";

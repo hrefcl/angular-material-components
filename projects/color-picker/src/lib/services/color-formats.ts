@@ -1,5 +1,5 @@
-import { InjectionToken } from '@angular/core';
-import { ColorInputFormat } from '../models';
+import { InjectionToken } from "@angular/core";
+import { ColorInputFormat } from "../models";
 
 export type MatColorFormats = {
   display: {
@@ -9,8 +9,10 @@ export type MatColorFormats = {
 
 export const NGX_MAT_COLOR_FORMATS: MatColorFormats = {
   display: {
-    colorInput: 'hex',
+    colorInput: "hex",
   },
 };
 
-export const MAT_COLOR_FORMATS = new InjectionToken<MatColorFormats>('mat-color-formats');
+export const MAT_COLOR_FORMATS = new InjectionToken<MatColorFormats>(
+  "mat-color-formats",
+);

@@ -11,40 +11,40 @@ import {
   input,
   untracked,
   viewChild,
-} from '@angular/core';
-import { MatButton, MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { Subscription, merge, of } from 'rxjs';
-import { NgxMatColorPickerComponent } from '../color-picker/color-picker.component';
+} from "@angular/core";
+import { MatButton, MatButtonModule } from "@angular/material/button";
+import { MatIconModule } from "@angular/material/icon";
+import { Subscription, merge, of } from "rxjs";
+import { NgxMatColorPickerComponent } from "../color-picker/color-picker.component";
 
 @Directive({
-  selector: '[ngxMatColorpickerToggleIcon]',
+  selector: "[ngxMatColorpickerToggleIcon]",
   standalone: true,
 })
 export class NgxMatColorpickerToggleIcon {}
 
 @Component({
-  selector: 'ngx-mat-color-toggle',
-  templateUrl: './color-toggle.component.html',
-  styleUrls: ['./color-toggle.component.scss'],
+  selector: "ngx-mat-color-toggle",
+  templateUrl: "./color-toggle.component.html",
+  styleUrls: ["./color-toggle.component.scss"],
   host: {
-    class: 'ngx-mat-color-toggle',
+    class: "ngx-mat-color-toggle",
     // Always set the tabindex to -1 so that it doesn't overlap with any custom tabindex the
     // consumer may have provided, while still being able to receive focus.
-    '[attr.tabindex]': '-1',
-    '[class.ngx-mat-color-toggle-active]': 'picker && picker.opened',
-    '[class.mat-accent]': 'picker && picker.color === "accent"',
-    '[class.mat-warn]': 'picker && picker.color === "warn"',
-    '(focus)': '_button.focus()',
+    "[attr.tabindex]": "-1",
+    "[class.ngx-mat-color-toggle-active]": "picker && picker.opened",
+    "[class.mat-accent]": 'picker && picker.color === "accent"',
+    "[class.mat-warn]": 'picker && picker.color === "warn"',
+    "(focus)": "_button.focus()",
   },
-  exportAs: 'ngxMatColorPickerToggle',
+  exportAs: "ngxMatColorPickerToggle",
   encapsulation: ViewEncapsulation.None,
   imports: [MatButtonModule, MatIconModule],
 })
 export class NgxMatColorToggleComponent implements AfterContentInit, OnDestroy {
   private _stateChanges = Subscription.EMPTY;
 
-  picker = input<NgxMatColorPickerComponent>(undefined, { alias: 'for' });
+  picker = input<NgxMatColorPickerComponent>(undefined, { alias: "for" });
   tabIndex = input<number>();
 
   @Input() get disabled(): boolean {
@@ -60,7 +60,7 @@ export class NgxMatColorToggleComponent implements AfterContentInit, OnDestroy {
   /** Whether ripples on the toggle should be disabled. */
   disableRipple = input<boolean>();
 
-  _button = viewChild<MatButton>('button');
+  _button = viewChild<MatButton>("button");
 
   constructor(private _cd: ChangeDetectorRef) {
     effect(() => {
@@ -87,15 +87,18 @@ export class NgxMatColorToggleComponent implements AfterContentInit, OnDestroy {
 
   private _watchStateChanges() {
     const disabled$ = this.picker()?._disabledChange ?? new EventEmitter();
-    const inputDisabled$ = this.picker()?._pickerInput?._disabledChange ?? new EventEmitter();
+    const inputDisabled$ =
+      this.picker()?._pickerInput?._disabledChange ?? new EventEmitter();
 
     const pickerToggled$ = this.picker()
       ? merge(this.picker()!.openedStream, this.picker()!.closedStream)
       : of();
     this._stateChanges.unsubscribe();
 
-    this._stateChanges = merge(disabled$, inputDisabled$, pickerToggled$).subscribe(() =>
-      this._cd.markForCheck(),
-    );
+    this._stateChanges = merge(
+      disabled$,
+      inputDisabled$,
+      pickerToggled$,
+    ).subscribe(() => this._cd.markForCheck());
   }
 }

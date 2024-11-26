@@ -66,7 +66,7 @@ function ssrSafeIsElement(node: Node): node is Element {
  * safe to use with server-side rendering.
  */
 function ssrSafeIsHTMLInputElement(node: Node): node is HTMLInputElement {
-  return node.nodeName === 'INPUT';
+  return node.nodeName === "INPUT";
 }
 
 /**
@@ -74,7 +74,7 @@ function ssrSafeIsHTMLInputElement(node: Node): node is HTMLInputElement {
  * funciton is safe to use with server-side rendering.
  */
 function ssrSafeIsHTMLTextAreaElement(node: Node): node is HTMLTextAreaElement {
-  return node.nodeName === 'TEXTAREA';
+  return node.nodeName === "TEXTAREA";
 }
 
 /**
@@ -100,7 +100,7 @@ function _computeAriaAccessibleNameInternal(
   // acc-name-1.2 Step 2.B.: aria-labelledby
   if (ssrSafeIsElement(currentNode) && isDirectlyReferenced) {
     const labelledbyIds: string[] =
-      currentNode.getAttribute?.('aria-labelledby')?.split(/\s+/g) || [];
+      currentNode.getAttribute?.("aria-labelledby")?.split(/\s+/g) || [];
     const validIdRefs: HTMLElement[] = labelledbyIds.reduce((validIds, id) => {
       const elem = document.getElementById(id);
       if (elem) {
@@ -114,13 +114,13 @@ function _computeAriaAccessibleNameInternal(
         .map((idRef) => {
           return _computeAriaAccessibleNameInternal(idRef, false);
         })
-        .join(' ');
+        .join(" ");
     }
   }
 
   // acc-name-1.2 Step 2.C.: aria-label
   if (ssrSafeIsElement(currentNode)) {
-    const ariaLabel = currentNode.getAttribute('aria-label')?.trim();
+    const ariaLabel = currentNode.getAttribute("aria-label")?.trim();
 
     if (ariaLabel) {
       return ariaLabel;
@@ -132,22 +132,25 @@ function _computeAriaAccessibleNameInternal(
   // NOTE: this differs from accname-1.2 specification.
   // Only implements Step 2.D. for `<label>`,`<input/>`, and `<textarea/>` element. Does not
   // implement other elements that have an attribute or element that defines a text alternative.
-  if (ssrSafeIsHTMLInputElement(currentNode) || ssrSafeIsHTMLTextAreaElement(currentNode)) {
+  if (
+    ssrSafeIsHTMLInputElement(currentNode) ||
+    ssrSafeIsHTMLTextAreaElement(currentNode)
+  ) {
     // use label with a `for` attribute referencing the current node
     if (currentNode.labels?.length) {
       return Array.from(currentNode.labels)
         .map((x) => _computeAriaAccessibleNameInternal(x, false))
-        .join(' ');
+        .join(" ");
     }
 
     // use placeholder if available
-    const placeholder = currentNode.getAttribute('placeholder')?.trim();
+    const placeholder = currentNode.getAttribute("placeholder")?.trim();
     if (placeholder) {
       return placeholder;
     }
 
     // use title if available
-    const title = currentNode.getAttribute('title')?.trim();
+    const title = currentNode.getAttribute("title")?.trim();
     if (title) {
       return title;
     }
@@ -167,5 +170,5 @@ function _computeAriaAccessibleNameInternal(
 
   // Return text content with whitespace collapsed into a single space character. Accomplish
   // acc-name-1.2 steps 2F, 2G, and 2H.
-  return (currentNode.textContent || '').replace(/\s+/g, ' ').trim();
+  return (currentNode.textContent || "").replace(/\s+/g, " ").trim();
 }

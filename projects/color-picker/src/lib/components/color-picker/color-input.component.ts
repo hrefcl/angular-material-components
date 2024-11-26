@@ -1,5 +1,5 @@
-import { coerceBooleanProperty } from '@angular/cdk/coercion';
-import { DOWN_ARROW } from '@angular/cdk/keycodes';
+import { coerceBooleanProperty } from "@angular/cdk/coercion";
+import { DOWN_ARROW } from "@angular/cdk/keycodes";
 import {
   Directive,
   ElementRef,
@@ -11,7 +11,7 @@ import {
   OnInit,
   Optional,
   output,
-} from '@angular/core';
+} from "@angular/core";
 import {
   AbstractControl,
   ControlValueAccessor,
@@ -21,15 +21,19 @@ import {
   Validator,
   ValidatorFn,
   Validators,
-} from '@angular/forms';
-import { ThemePalette } from '@angular/material/core';
-import { MatFormField } from '@angular/material/form-field';
-import { MAT_INPUT_VALUE_ACCESSOR } from '@angular/material/input';
-import { Subscription } from 'rxjs';
-import { createMissingDateImplError } from '../../helpers';
-import { Color } from '../../models';
-import { ColorAdapter, MAT_COLOR_FORMATS, MatColorFormats } from '../../services';
-import { NgxMatColorPickerComponent } from './color-picker.component';
+} from "@angular/forms";
+import { ThemePalette } from "@angular/material/core";
+import { MatFormField } from "@angular/material/form-field";
+import { MAT_INPUT_VALUE_ACCESSOR } from "@angular/material/input";
+import { Subscription } from "rxjs";
+import { createMissingDateImplError } from "../../helpers";
+import { Color } from "../../models";
+import {
+  ColorAdapter,
+  MAT_COLOR_FORMATS,
+  MatColorFormats,
+} from "../../services";
+import { NgxMatColorPickerComponent } from "./color-picker.component";
 
 export class NgxMatColorPickerInputEvent {
   /** The new value for the target colorpicker input. */
@@ -58,7 +62,7 @@ export const MAT_COLORPICKER_VALIDATORS: any = {
 };
 
 @Directive({
-  selector: 'input[ngxMatColorPicker]',
+  selector: "input[ngxMatColorPicker]",
   providers: [
     { provide: MAT_INPUT_VALUE_ACCESSOR, useExisting: NgxMatColorPickerInput },
     ColorAdapter,
@@ -66,18 +70,20 @@ export const MAT_COLORPICKER_VALIDATORS: any = {
     MAT_COLORPICKER_VALUE_ACCESSOR,
   ],
   host: {
-    '[attr.aria-haspopup]': '_picker ? "dialog" : null',
-    '[attr.aria-owns]': '(_picker?.opened && _picker.id) || null',
-    '[disabled]': 'disabled',
-    '(input)': '_onInput($event.target.value)',
-    '(change)': '_onChange()',
-    '(blur)': '_onBlur()',
-    '(keydown)': '_onKeydown($event)',
+    "[attr.aria-haspopup]": '_picker ? "dialog" : null',
+    "[attr.aria-owns]": "(_picker?.opened && _picker.id) || null",
+    "[disabled]": "disabled",
+    "(input)": "_onInput($event.target.value)",
+    "(change)": "_onChange()",
+    "(blur)": "_onBlur()",
+    "(keydown)": "_onKeydown($event)",
   },
-  exportAs: 'ngxMatColorPickerInput',
+  exportAs: "ngxMatColorPickerInput",
   standalone: true,
 })
-export class NgxMatColorPickerInput implements ControlValueAccessor, OnInit, OnDestroy, Validator {
+export class NgxMatColorPickerInput
+  implements ControlValueAccessor, OnInit, OnDestroy, Validator
+{
   @Input()
   set ngxMatColorPicker(value: NgxMatColorPickerComponent) {
     if (!value) {
@@ -88,13 +94,19 @@ export class NgxMatColorPickerInput implements ControlValueAccessor, OnInit, OnD
     this._picker.registerInput(this);
     this._pickerSubscription.unsubscribe();
 
-    this._pickerSubscription = this._picker._selectedChanged.subscribe((selected: Color) => {
-      this.value = selected;
-      this._cvaOnChange(selected);
-      this._onTouched();
-      this.colorInput.emit(new NgxMatColorPickerInputEvent(this, this._elementRef.nativeElement));
-      this.colorChange.emit(new NgxMatColorPickerInputEvent(this, this._elementRef.nativeElement));
-    });
+    this._pickerSubscription = this._picker._selectedChanged.subscribe(
+      (selected: Color) => {
+        this.value = selected;
+        this._cvaOnChange(selected);
+        this._onTouched();
+        this.colorInput.emit(
+          new NgxMatColorPickerInputEvent(this, this._elementRef.nativeElement),
+        );
+        this.colorChange.emit(
+          new NgxMatColorPickerInputEvent(this, this._elementRef.nativeElement),
+        );
+      },
+    );
   }
   _picker: NgxMatColorPickerComponent;
 
@@ -173,7 +185,7 @@ export class NgxMatColorPickerInput implements ControlValueAccessor, OnInit, OnD
     private _adapter: ColorAdapter,
   ) {
     if (!this._colorFormats) {
-      throw createMissingDateImplError('MAT_COLOR_FORMATS');
+      throw createMissingDateImplError("MAT_COLOR_FORMATS");
     }
   }
 
@@ -203,7 +215,9 @@ export class NgxMatColorPickerInput implements ControlValueAccessor, OnInit, OnD
    * @return The element to connect the popup to.
    */
   getConnectedOverlayOrigin(): ElementRef {
-    return this._formField ? this._formField.getConnectedOverlayOrigin() : this._elementRef;
+    return this._formField
+      ? this._formField.getConnectedOverlayOrigin()
+      : this._elementRef;
   }
 
   ngOnInit() {}
@@ -235,13 +249,19 @@ export class NgxMatColorPickerInput implements ControlValueAccessor, OnInit, OnD
   }
 
   _onChange() {
-    this.colorChange.emit(new NgxMatColorPickerInputEvent(this, this._elementRef.nativeElement));
+    this.colorChange.emit(
+      new NgxMatColorPickerInputEvent(this, this._elementRef.nativeElement),
+    );
   }
 
   _onKeydown(event: KeyboardEvent) {
     const isAltDownArrow = event.altKey && event.keyCode === DOWN_ARROW;
 
-    if (this._picker && isAltDownArrow && !this._elementRef.nativeElement.readOnly) {
+    if (
+      this._picker &&
+      isAltDownArrow &&
+      !this._elementRef.nativeElement.readOnly
+    ) {
       this._picker.open();
       event.preventDefault();
     }
@@ -261,7 +281,7 @@ export class NgxMatColorPickerInput implements ControlValueAccessor, OnInit, OnD
   private _formatValue(value: Color | null) {
     this._elementRef.nativeElement.value = value
       ? this._adapter.format(value, this._colorFormats.display.colorInput)
-      : '';
+      : "";
   }
 
   _onInput(value: string) {
@@ -272,7 +292,9 @@ export class NgxMatColorPickerInput implements ControlValueAccessor, OnInit, OnD
       this._value = nextValue;
       this._cvaOnChange(nextValue);
       this._valueChange.emit(nextValue);
-      this.colorInput.emit(new NgxMatColorPickerInputEvent(this, this._elementRef.nativeElement));
+      this.colorInput.emit(
+        new NgxMatColorPickerInputEvent(this, this._elementRef.nativeElement),
+      );
     } else if (lastValueWasValid !== this._lastValueValid) {
       this._validatorOnChange();
     }

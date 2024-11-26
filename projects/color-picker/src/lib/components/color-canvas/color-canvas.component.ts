@@ -7,34 +7,43 @@ import {
   OnInit,
   SimpleChanges,
   ViewEncapsulation,
-} from '@angular/core';
+} from "@angular/core";
 import {
   AbstractControl,
   FormControl,
   FormGroup,
   ReactiveFormsModule,
   Validators,
-} from '@angular/forms';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { merge } from 'rxjs';
-import { debounceTime, distinctUntilChanged, takeUntil } from 'rxjs/operators';
-import { getColorAtPosition, matchers, stringInputToObject } from '../../helpers';
-import { Color } from '../../models';
-import { NgxMatBaseColorCanvas } from './base-color-canvas';
-import { NgxMatColorSliderComponent } from './color-slider/color-slider.component';
+} from "@angular/forms";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatInputModule } from "@angular/material/input";
+import { merge } from "rxjs";
+import { debounceTime, distinctUntilChanged, takeUntil } from "rxjs/operators";
+import {
+  getColorAtPosition,
+  matchers,
+  stringInputToObject,
+} from "../../helpers";
+import { Color } from "../../models";
+import { NgxMatBaseColorCanvas } from "./base-color-canvas";
+import { NgxMatColorSliderComponent } from "./color-slider/color-slider.component";
 
 const RADIUS_NOB = 5;
 
 @Component({
-  selector: 'ngx-mat-color-canvas',
-  templateUrl: './color-canvas.component.html',
-  styleUrls: ['./color-canvas.component.scss'],
+  selector: "ngx-mat-color-canvas",
+  templateUrl: "./color-canvas.component.html",
+  styleUrls: ["./color-canvas.component.scss"],
   encapsulation: ViewEncapsulation.None,
   host: {
-    class: 'ngx-mat-color-canvas',
+    class: "ngx-mat-color-canvas",
   },
-  imports: [MatFormFieldModule, MatInputModule, NgxMatColorSliderComponent, ReactiveFormsModule],
+  imports: [
+    MatFormFieldModule,
+    MatInputModule,
+    NgxMatColorSliderComponent,
+    ReactiveFormsModule,
+  ],
 })
 export class NgxMatColorCanvasComponent
   extends NgxMatBaseColorCanvas
@@ -43,23 +52,23 @@ export class NgxMatColorCanvasComponent
   private _baseColor: Color;
 
   get rCtrl(): AbstractControl {
-    return this.formGroup.get('r');
+    return this.formGroup.get("r");
   }
 
   get gCtrl(): AbstractControl {
-    return this.formGroup.get('g');
+    return this.formGroup.get("g");
   }
 
   get bCtrl(): AbstractControl {
-    return this.formGroup.get('b');
+    return this.formGroup.get("b");
   }
 
   get aCtrl(): AbstractControl {
-    return this.formGroup.get('a');
+    return this.formGroup.get("a");
   }
 
   get hexCtrl(): AbstractControl {
-    return this.formGroup.get('hex');
+    return this.formGroup.get("hex");
   }
 
   _resetBaseColor = true;
@@ -69,13 +78,16 @@ export class NgxMatColorCanvasComponent
   rgba: string;
 
   constructor(protected zone: NgZone) {
-    super(zone, 'color-block');
+    super(zone, "color-block");
     this.formGroup = new FormGroup({
       r: new FormControl(null, [Validators.required]),
       g: new FormControl(null, [Validators.required]),
       b: new FormControl(null, [Validators.required]),
       a: new FormControl(null, [Validators.required]),
-      hex: new FormControl(null, [Validators.required, Validators.pattern(matchers.hex6)]),
+      hex: new FormControl(null, [
+        Validators.required,
+        Validators.pattern(matchers.hex6),
+      ]),
     });
   }
 
@@ -86,19 +98,25 @@ export class NgxMatColorCanvasComponent
       this.bCtrl.valueChanges,
       this.aCtrl.valueChanges,
     );
-    rgbaCtrl$.pipe(takeUntil(this._destroyed), debounceTime(400)).subscribe((_) => {
-      const color = new Color(
-        Number(this.rCtrl.value),
-        Number(this.gCtrl.value),
-        Number(this.bCtrl.value),
-        Number(this.aCtrl.value),
-      );
-      this.emitChange(color);
-    });
+    rgbaCtrl$
+      .pipe(takeUntil(this._destroyed), debounceTime(400))
+      .subscribe((_) => {
+        const color = new Color(
+          Number(this.rCtrl.value),
+          Number(this.gCtrl.value),
+          Number(this.bCtrl.value),
+          Number(this.aCtrl.value),
+        );
+        this.emitChange(color);
+      });
 
     const hexCtrl$ = this.hexCtrl.valueChanges;
     hexCtrl$
-      .pipe(takeUntil(this._destroyed), debounceTime(400), distinctUntilChanged())
+      .pipe(
+        takeUntil(this._destroyed),
+        debounceTime(400),
+        distinctUntilChanged(),
+      )
       .subscribe((hex) => {
         const obj = stringInputToObject(hex);
         if (obj != null) {
@@ -134,25 +152,27 @@ export class NgxMatColorCanvasComponent
 
   public redrawIndicator(x: number, y: number) {
     this.ctx.beginPath();
-    this.ctx.strokeStyle = 'white';
+    this.ctx.strokeStyle = "white";
     this.ctx.arc(x, y, RADIUS_NOB, 0, 2 * Math.PI, false);
     this.ctx.stroke();
     this.ctx.closePath();
   }
 
   public fillGradient() {
-    this.ctx.fillStyle = this._baseColor ? this._baseColor.rgba : 'rgba(255,255,255,1)';
+    this.ctx.fillStyle = this._baseColor
+      ? this._baseColor.rgba
+      : "rgba(255,255,255,1)";
     this.ctx.fillRect(0, 0, this.width, this.height);
 
     const grdWhite = this.ctx.createLinearGradient(0, 0, this.width, 0);
-    grdWhite.addColorStop(0, 'rgba(255,255,255,1)');
-    grdWhite.addColorStop(1, 'rgba(255,255,255,0)');
+    grdWhite.addColorStop(0, "rgba(255,255,255,1)");
+    grdWhite.addColorStop(1, "rgba(255,255,255,0)");
     this.ctx.fillStyle = grdWhite;
     this.ctx.fillRect(0, 0, this.width, this.height);
 
     const grdBlack = this.ctx.createLinearGradient(0, 0, 0, this.height);
-    grdBlack.addColorStop(0, 'rgba(0,0,0,0)');
-    grdBlack.addColorStop(1, 'rgba(0,0,0,1)');
+    grdBlack.addColorStop(0, "rgba(0,0,0,0)");
+    grdBlack.addColorStop(1, "rgba(0,0,0,1)");
     this.ctx.fillStyle = grdBlack;
     this.ctx.fillRect(0, 0, this.width, this.height);
   }

@@ -1,5 +1,5 @@
-import { MAX_RGB, rgbaToHex, rgbToHex } from '../helpers';
-import { ColorInputFormat } from './color-input-format';
+import { MAX_RGB, rgbaToHex, rgbToHex } from "../helpers";
+import { ColorInputFormat } from "./color-input-format";
 
 export class Color {
   public r: number;
@@ -34,21 +34,27 @@ export class Color {
   }
 
   public toHexString(allow3Char?: boolean): string {
-    return '#' + this.toHex(allow3Char);
+    return "#" + this.toHex(allow3Char);
   }
 
   public toRgbString(): string {
     return this.a === 1
-      ? 'rgb(' + Math.round(this.r) + ', ' + Math.round(this.g) + ', ' + Math.round(this.b) + ')'
-      : 'rgba(' +
+      ? "rgb(" +
           Math.round(this.r) +
-          ', ' +
+          ", " +
           Math.round(this.g) +
-          ', ' +
+          ", " +
           Math.round(this.b) +
-          ', ' +
+          ")"
+      : "rgba(" +
+          Math.round(this.r) +
+          ", " +
+          Math.round(this.g) +
+          ", " +
+          Math.round(this.b) +
+          ", " +
           this.roundA +
-          ')';
+          ")";
   }
 
   public toHex8(allow4Char): string {
@@ -56,7 +62,7 @@ export class Color {
   }
 
   public toHex8String(allow4Char?: boolean): string {
-    return '#' + this.toHex8(allow4Char);
+    return "#" + this.toHex8(allow4Char);
   }
 
   public toString(format: ColorInputFormat): string {
@@ -67,28 +73,28 @@ export class Color {
     let needsAlphaFormat =
       !formatSet &&
       hasAlpha &&
-      (format === 'hex' ||
-        format === 'hex6' ||
-        format === 'hex3' ||
-        format === 'hex4' ||
-        format === 'hex8');
+      (format === "hex" ||
+        format === "hex6" ||
+        format === "hex3" ||
+        format === "hex4" ||
+        format === "hex8");
 
     if (needsAlphaFormat) {
       return this.toRgbString();
     }
-    if (format === 'rgb') {
+    if (format === "rgb") {
       formattedString = this.toRgbString();
     }
-    if (format === 'hex' || format === 'hex6') {
+    if (format === "hex" || format === "hex6") {
       formattedString = this.toHexString();
     }
-    if (format === 'hex3') {
+    if (format === "hex3") {
       formattedString = this.toHexString(true);
     }
-    if (format === 'hex4') {
+    if (format === "hex4") {
       formattedString = this.toHex8String(true);
     }
-    if (format === 'hex8') {
+    if (format === "hex8") {
       formattedString = this.toHex8String();
     }
 
