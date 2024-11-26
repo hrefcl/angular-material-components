@@ -371,9 +371,9 @@
               '<mat-form-field>\n  <ngx-mat-file-input [formControl]="file2Control" [multiple]="multiple" [accept]="accept" [color]="color">\n    <mat-icon ngxMatFileInputIcon>folder</mat-icon>\n  </ngx-mat-file-input>\n</mat-form-field>'),
             (this.code5 =
               '<mat-form-field appearance="outline">\n  <ngx-mat-file-input [formControl]="file3Control">\n  </ngx-mat-file-input>\n  <mat-hint>Hint</mat-hint>\n</mat-form-field>'),
-            (this.code1 = 'npm install --save @href/file-input'),
+            (this.code1 = 'npm install --save @hrefcl/file-input'),
             (this.code2 =
-              "import { NgxMatFileInputModule } from '@href/file-input';\n  \n  @NgModule({\n     ...\n     imports: [\n          ...\n          NgxMatFileInputModule\n     ]\n     ...\n  })\n  export class AppModule { }"),
+              "import { NgxMatFileInputModule } from '@hrefcl/file-input';\n  \n  @NgModule({\n     ...\n     imports: [\n          ...\n          NgxMatFileInputModule\n     ]\n     ...\n  })\n  export class AppModule { }"),
             (this.code6 =
               '<link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block" rel="stylesheet">'),
             (this.maxSize = 16),
@@ -433,7 +433,7 @@
               'width',
               '150px !important',
             ],
-            ['href', 'https://www.npmjs.com/package/@href/file-input', 'target', '_blank'],
+            ['href', 'https://www.npmjs.com/package/@hrefcl/file-input', 'target', '_blank'],
             ['src', 'https://badge.fury.io/js/%40angular-material-components%2Ffile-input.svg'],
             ['ngxMatHighlight', ''],
             ['ngxMatHighlight', '', 1, 'language-typescript'],
@@ -471,7 +471,7 @@
               t._UZ(5, 'img', 3),
               t.qZA(),
               t.TgZ(6, 'h1'),
-              t._uU(7, 'API reference for @href/file-input'),
+              t._uU(7, 'API reference for @hrefcl/file-input'),
               t.qZA(),
               t.TgZ(8, 'h2'),
               t._uU(9, 'Getting started'),

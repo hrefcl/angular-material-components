@@ -23,26 +23,26 @@
       "node"
     ],
     "paths": {
-      "@href/*": [
-        "dist/@href/*"
+      "@hrefcl/*": [
+        "dist/@hrefcl/*"
       ],
-      "@href/color-picker": [
-        "dist/@href/color-picker"
+      "@hrefcl/color-picker": [
+        "dist/@hrefcl/color-picker"
       ],
-      "@href/color-picker/*": [
-        "dist/@href/color-picker/*"
+      "@hrefcl/color-picker/*": [
+        "dist/@hrefcl/color-picker/*"
       ],
-      "@href/datetime-picker": [
-        "dist/@href/datetime-picker"
+      "@hrefcl/datetime-picker": [
+        "dist/@hrefcl/datetime-picker"
       ],
-      "@href/datetime-picker/*": [
-        "dist/@href/datetime-picker/*"
+      "@hrefcl/datetime-picker/*": [
+        "dist/@hrefcl/datetime-picker/*"
       ],
       "file-input": [
-        "dist/@href/file-input"
+        "dist/@hrefcl/file-input"
       ],
       "file-input/*": [
-        "dist/@href/file-input/*"
+        "dist/@hrefcl/file-input/*"
       ]
     },
     "useDefineForClassFields": false,

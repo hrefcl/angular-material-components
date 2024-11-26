@@ -2,18 +2,18 @@
 
 ## Description
 
-Moment Adapter for [@href/datetime-picker](https://www.npmjs.com/package/@href/datetime-picker)
+Moment Adapter for [@hrefcl/datetime-picker](https://www.npmjs.com/package/@hrefcl/datetime-picker)
 
 ## Getting started
 
 ```
-npm install --save  @href/moment-adapter
+npm install --save  @hrefcl/moment-adapter
 ```
 
 ## Setup
 
 ```
-import { NgxMatMomentModule } from '@href/moment-adapter';
+import { NgxMatMomentModule } from '@hrefcl/moment-adapter';
 @NgModule({
    ...
    imports: [

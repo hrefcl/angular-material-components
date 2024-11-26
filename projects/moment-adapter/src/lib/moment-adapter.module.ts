@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { MAT_DATE_LOCALE } from "@angular/material/core";
-import { NGX_MAT_DATE_FORMATS, NgxMatDateAdapter } from "@href/datetime-picker";
+import { NGX_MAT_DATE_FORMATS, NgxMatDateAdapter } from "@hrefcl/datetime-picker";
 import {
   NGX_MAT_MOMENT_DATE_ADAPTER_OPTIONS,
   NgxMatMomentAdapter,

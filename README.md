@@ -25,13 +25,13 @@ Elige la versión correspondiente a tu versión de Angular:
 
 ### Selector de Fecha y Hora (Datetime Picker)
 
-[![Versión en npm](https://badge.fury.io/js/%40angular-material-components%2Fdatetime-picker.svg)](https://www.npmjs.com/package/@hrefcl/datetime-picker)
-[![Descargas en npm](https://img.shields.io/npm/dt/@hrefcl/datetime-picker.svg)]()
+[![Versión en npm](https://badge.fury.io/js/%40angular-material-components%2Fdatetime-picker.svg)](https://www.npmjs.com/package/@hrefclcl/datetime-picker)
+[![Descargas en npm](https://img.shields.io/npm/dt/@hrefclcl/datetime-picker.svg)]()
 
 **Instalación:**
 
 ```bash
-npm install --save @hrefcl/datetime-picker
+npm install --save @hrefclcl/datetime-picker
 ```
 
 **Ejemplo de uso:**
@@ -51,13 +51,13 @@ npm install --save @hrefcl/datetime-picker
 
 ### Selector de Color (Color Picker)
 
-[![Versión en npm](https://badge.fury.io/js/%40angular-material-components%2Fcolor-picker.svg)](https://www.npmjs.com/package/@hrefcl/color-picker)
-[![Descargas en npm](https://img.shields.io/npm/dt/@hrefcl/color-picker.svg)]()
+[![Versión en npm](https://badge.fury.io/js/%40angular-material-components%2Fcolor-picker.svg)](https://www.npmjs.com/package/@hrefclcl/color-picker)
+[![Descargas en npm](https://img.shields.io/npm/dt/@hrefclcl/color-picker.svg)]()
 
 **Instalación:**
 
 ```bash
-npm install --save @hrefcl/color-picker
+npm install --save @hrefclcl/color-picker
 ```
 
 **Ejemplo de uso:**
@@ -74,13 +74,13 @@ npm install --save @hrefcl/color-picker
 
 ### Entrada de Archivos (File Input)
 
-[![Versión en npm](https://badge.fury.io/js/%40angular-material-components%2Ffile-input.svg)](https://www.npmjs.com/package/@hrefcl/file-input)
-[![Descargas en npm](https://img.shields.io/npm/dt/@hrefcl/file-input.svg)]()
+[![Versión en npm](https://badge.fury.io/js/%40angular-material-components%2Ffile-input.svg)](https://www.npmjs.com/package/@hrefclcl/file-input)
+[![Descargas en npm](https://img.shields.io/npm/dt/@hrefclcl/file-input.svg)]()
 
 **Instalación:**
 
 ```bash
-npm install --save @hrefcl/file-input
+npm install --save @hrefclcl/file-input
 ```
 
 **Ejemplo de uso:**

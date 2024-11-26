@@ -5148,9 +5148,9 @@
           decls: 46,
           vars: 6,
           consts: [
-            ['href', 'https://www.npmjs.com/package/@href/datetime-picker'],
-            ['href', 'https://www.npmjs.com/package/@href/color-picker'],
-            ['href', 'https://www.npmjs.com/package/@href/file-input'],
+            ['href', 'https://www.npmjs.com/package/@hrefcl/datetime-picker'],
+            ['href', 'https://www.npmjs.com/package/@hrefcl/color-picker'],
+            ['href', 'https://www.npmjs.com/package/@hrefcl/file-input'],
             ['href', 'https://github.com/hrefcl/angular-material-components/issues'],
             ['href', 'https://github.com/hrefcl/angular-material-components'],
             ['href', 'https://www.buymeacoffee.com/h2qutc', 'target', '_blank'],

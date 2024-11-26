@@ -7,7 +7,7 @@ import { MAT_DATE_LOCALE } from "@angular/material/core";
 // TODO(mmalerba): See if we can clean this up at some point.
 import moment from "moment";
 // tslint:disable-next-line:no-duplicate-imports
-import { NgxMatDateAdapter } from "@href/datetime-picker";
+import { NgxMatDateAdapter } from "@hrefcl/datetime-picker";
 import { Moment, MomentFormatSpecification, MomentInput } from "moment";
 
 /** Configurable options for {@see MomentDateAdapter}. */
