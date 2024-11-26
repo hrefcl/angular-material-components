@@ -1,8 +1,7 @@
 {
   "name": "@href/amc",
-  "version": "19.0.0",
+  "version": "19.0.0-1",
   "description": "Angular Material Datetime Picker",
-  "author": "HO Hong Quan",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hrefcl/angular-material-components"
