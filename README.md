@@ -31,7 +31,7 @@ Elige la versión correspondiente a tu versión de Angular:
 **Instalación:**
 
 ```bash
-npm install --save @hrefclcl/datetime-picker
+npm install --save @hrefcl/datetime-picker
 ```
 
 **Ejemplo de uso:**
@@ -57,7 +57,7 @@ npm install --save @hrefclcl/datetime-picker
 **Instalación:**
 
 ```bash
-npm install --save @hrefclcl/color-picker
+npm install --save @hrefcl/color-picker
 ```
 
 **Ejemplo de uso:**
@@ -80,7 +80,7 @@ npm install --save @hrefclcl/color-picker
 **Instalación:**
 
 ```bash
-npm install --save @hrefclcl/file-input
+npm install --save @hrefcl/file-input
 ```
 
 **Ejemplo de uso:**
