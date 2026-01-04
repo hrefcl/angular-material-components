@@ -18,8 +18,9 @@ import {
  * Input that can be associated with a date range picker.
  * @docs-private
  */
-export interface NgxMatDateRangePickerInput<D>
-  extends NgxMatDatepickerControl<D> {
+export interface NgxMatDateRangePickerInput<
+  D,
+> extends NgxMatDatepickerControl<D> {
   _getEndDateAccessibleName(): string | null;
   _getStartDateAccessibleName(): string | null;
   comparisonStart: D | null;

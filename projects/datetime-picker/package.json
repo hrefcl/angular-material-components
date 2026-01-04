@@ -1,6 +1,6 @@
 {
   "name": "@hrefcl/datetime-picker",
-  "version": "19.0.0",
+  "version": "21.0.0",
   "description": "Angular Material Datetime Picker",
   "author": "HO Hong Quan",
   "repository": {
@@ -22,6 +22,8 @@
     "angular 17",
     "angular 18",
     "angular 19",
+    "angular 20",
+    "angular 21",
     "angular-material",
     "angular material datetime picker",
     "angular material time picker",
@@ -35,11 +37,11 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@angular/cdk": "^19.0.0",
-    "@angular/common": "^19.0.0",
-    "@angular/core": "^19.0.0",
-    "@angular/forms": "^19.0.0",
-    "@angular/material": "^19.0.0",
-    "@angular/platform-browser": "^19.0.0"
+    "@angular/cdk": "^21.0.0",
+    "@angular/common": "^21.0.0",
+    "@angular/core": "^21.0.0",
+    "@angular/forms": "^21.0.0",
+    "@angular/material": "^21.0.0",
+    "@angular/platform-browser": "^21.0.0"
   }
 }
