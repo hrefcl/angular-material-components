@@ -7,7 +7,7 @@
     "sourceMap": true,
     "inlineSources": true,
     "experimentalDecorators": true,
-    "importHelpers": true,
+    "importHelpers": true
   },
   "angularCompilerOptions": {
     "annotateForClosureCompiler": true,
@@ -16,7 +16,8 @@
     "strictMetadataEmit": true,
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true,
-    "enableResourceInlining": true
+    "enableResourceInlining": true,
+    "strictTemplates": false
   },
   "exclude": [
     "src/test.ts",

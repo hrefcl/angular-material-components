@@ -15,6 +15,7 @@ import {
   Self,
   viewChild,
   ViewEncapsulation,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 import {
   ControlValueAccessor,
@@ -64,6 +65,7 @@ export class NgxMatFileInputIcon {}
     },
   ],
   exportAs: "ngx-mat-file-input",
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [MatIconModule, MatButtonModule],
 })
 export class NgxMatFileInputComponent

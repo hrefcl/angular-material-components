@@ -8,6 +8,7 @@ import {
   Optional,
   SimpleChanges,
   ViewEncapsulation,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 import {
   ControlValueAccessor,
@@ -53,6 +54,7 @@ import {
   ],
   exportAs: "ngxMatTimepicker",
   encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     ReactiveFormsModule,
     MatFormFieldModule,

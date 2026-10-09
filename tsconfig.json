@@ -1,7 +1,6 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "esModuleInterop": true,
@@ -12,7 +11,7 @@
     "importHelpers": true,
     "target": "ES2022",
     "typeRoots": [
-      "node_modules/@types"
+      "./node_modules/@types"
     ],
     "lib": [
       "ES2022",
@@ -23,28 +22,29 @@
     ],
     "paths": {
       "@hrefcl/*": [
-        "dist/@hrefcl/*"
+        "./dist/@hrefcl/*"
       ],
       "@hrefcl/color-picker": [
-        "dist/@hrefcl/color-picker"
+        "./dist/@hrefcl/color-picker"
       ],
       "@hrefcl/color-picker/*": [
-        "dist/@hrefcl/color-picker/*"
+        "./dist/@hrefcl/color-picker/*"
       ],
       "@hrefcl/datetime-picker": [
-        "dist/@hrefcl/datetime-picker"
+        "./dist/@hrefcl/datetime-picker"
       ],
       "@hrefcl/datetime-picker/*": [
-        "dist/@hrefcl/datetime-picker/*"
+        "./dist/@hrefcl/datetime-picker/*"
       ],
       "file-input": [
-        "dist/@hrefcl/file-input"
+        "./dist/@hrefcl/file-input"
       ],
       "file-input/*": [
-        "dist/@hrefcl/file-input/*"
+        "./dist/@hrefcl/file-input/*"
       ]
     },
     "useDefineForClassFields": false,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "strict": false
   }
 }

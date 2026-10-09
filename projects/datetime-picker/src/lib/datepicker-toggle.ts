@@ -36,8 +36,10 @@ export class NgxMatDatepickerToggleIcon {}
   host: {
     class: "mat-datepicker-toggle",
     "[attr.tabindex]": "null",
-    "[class.mat-datepicker-toggle-active]": "_datepickerValue && _datepickerValue.opened",
-    "[class.mat-accent]": '_datepickerValue && _datepickerValue.color === "accent"',
+    "[class.mat-datepicker-toggle-active]":
+      "_datepickerValue && _datepickerValue.opened",
+    "[class.mat-accent]":
+      '_datepickerValue && _datepickerValue.color === "accent"',
     "[class.mat-warn]": '_datepickerValue && _datepickerValue.color === "warn"',
     // Used by the test harness to tie this toggle to its datepicker.
     "[attr.data-mat-calendar]": "_datepickerValue ? _datepickerValue.id : null",
