@@ -10,6 +10,8 @@ All notable changes to this library will be documented in this file.
   in favour of relative `paths` (deprecated in TS 6)
 - Removed `extendedDiagnostics` where `ng update` left it next to `strictTemplates: false` (NG4003)
 - `angular.json` uses npm as package manager (the repo already ships `package-lock.json`)
+- README: compatibility table for Angular 19/21/22, npm badges pointing to `@hrefcl/*`, moment-adapter install
+- `repository.url` normalized (`npm pkg fix`) in datetime-picker and moment-adapter
 
 ### Known issues
 - `@hrefcl/color-picker` (last published 19.0.0) and the demo app do not build; not part of this release

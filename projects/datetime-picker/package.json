@@ -5,7 +5,7 @@
   "author": "HO Hong Quan",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hrefcl/angular-material-components"
+    "url": "git+https://github.com/hrefcl/angular-material-components.git"
   },
   "bugs": {
     "url": "https://github.com/hrefcl/angular-material-components/issues"

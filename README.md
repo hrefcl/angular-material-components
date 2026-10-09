@@ -1,4 +1,4 @@
-# Angular Material Extra Components (DatetimePicker, TimePicker, ColorPicker, FileInput ...) para @angular/material 17.x, 18.x, 19.x
+# Angular Material Extra Components (DatetimePicker, TimePicker, ColorPicker, FileInput ...) para @angular/material 19.x, 21.x y 22.x
 
 [![Estado de construcción](https://travis-ci.com/h2qutc/angular-material-components.svg?branch=master)](https://travis-ci.com/h2qutc/angular-material-components)
 [![Licencia](https://img.shields.io/npm/l/angular-material-components.svg)](https://www.npmjs.com/package/angular-material-components)
@@ -19,19 +19,25 @@ Prueba la demostración y consulta la documentación:
 
 Elige la versión correspondiente a tu versión de Angular:
 
-| Angular | Versión                         |
-| ------- | ------------------------------- |
-| 19      | 19.x+                           |
+| Angular | `@hrefcl/datetime-picker` / `@hrefcl/moment-adapter` | `@hrefcl/color-picker` / `@hrefcl/file-input` |
+| ------- | ---------------------------------------------------- | --------------------------------------------- |
+| 22      | 22.x (TypeScript 6.0)                                | no publicado                                  |
+| 21      | 21.x                                                 | no publicado                                  |
+| 19      | 19.x                                                 | 19.x                                          |
+
+Cambios por versión en [CHANGELOG.md](CHANGELOG.md).
 
 ### Selector de Fecha y Hora (Datetime Picker)
 
-[![Versión en npm](https://badge.fury.io/js/%40angular-material-components%2Fdatetime-picker.svg)](https://www.npmjs.com/package/@hrefclcl/datetime-picker)
-[![Descargas en npm](https://img.shields.io/npm/dt/@hrefclcl/datetime-picker.svg)]()
+[![Versión en npm](https://img.shields.io/npm/v/@hrefcl/datetime-picker.svg)](https://www.npmjs.com/package/@hrefcl/datetime-picker)
+[![Descargas en npm](https://img.shields.io/npm/dt/@hrefcl/datetime-picker.svg)](https://www.npmjs.com/package/@hrefcl/datetime-picker)
 
 **Instalación:**
 
 ```bash
 npm install --save @hrefcl/datetime-picker
+# Con Moment.js como adaptador de fechas:
+npm install --save @hrefcl/moment-adapter moment
 ```
 
 **Ejemplo de uso:**
@@ -51,8 +57,8 @@ npm install --save @hrefcl/datetime-picker
 
 ### Selector de Color (Color Picker)
 
-[![Versión en npm](https://badge.fury.io/js/%40angular-material-components%2Fcolor-picker.svg)](https://www.npmjs.com/package/@hrefclcl/color-picker)
-[![Descargas en npm](https://img.shields.io/npm/dt/@hrefclcl/color-picker.svg)]()
+[![Versión en npm](https://img.shields.io/npm/v/@hrefcl/color-picker.svg)](https://www.npmjs.com/package/@hrefcl/color-picker)
+[![Descargas en npm](https://img.shields.io/npm/dt/@hrefcl/color-picker.svg)](https://www.npmjs.com/package/@hrefcl/color-picker)
 
 **Instalación:**
 
@@ -74,8 +80,8 @@ npm install --save @hrefcl/color-picker
 
 ### Entrada de Archivos (File Input)
 
-[![Versión en npm](https://badge.fury.io/js/%40angular-material-components%2Ffile-input.svg)](https://www.npmjs.com/package/@hrefclcl/file-input)
-[![Descargas en npm](https://img.shields.io/npm/dt/@hrefclcl/file-input.svg)]()
+[![Versión en npm](https://img.shields.io/npm/v/@hrefcl/file-input.svg)](https://www.npmjs.com/package/@hrefcl/file-input)
+[![Descargas en npm](https://img.shields.io/npm/dt/@hrefcl/file-input.svg)](https://www.npmjs.com/package/@hrefcl/file-input)
 
 **Instalación:**
 
