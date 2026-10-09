@@ -235,6 +235,6 @@
   },
   "cli": {
     "analytics": false,
-    "packageManager": "pnpm"
+    "packageManager": "npm"
   }
 }
