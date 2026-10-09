@@ -5,6 +5,7 @@ import {
   output,
   signal,
   ViewEncapsulation,
+  ChangeDetectionStrategy,
 } from "@angular/core";
 import { MatButtonModule } from "@angular/material/button";
 import { BASIC_COLORS, stringInputToObject } from "../../helpers";
@@ -18,6 +19,7 @@ import { Color } from "../../models";
   host: {
     class: "ngx-mat-color-collection",
   },
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [MatButtonModule, NgClass],
 })
 export class NgxMatColorCollectionComponent {

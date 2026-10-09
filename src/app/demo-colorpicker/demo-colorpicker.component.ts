@@ -1,19 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import {
   AbstractControl,
   FormControl,
   FormsModule,
   ReactiveFormsModule,
   Validators,
-} from '@angular/forms';
-import { MatCardModule } from '@angular/material/card';
-import { ThemePalette } from '@angular/material/core';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatIconModule } from '@angular/material/icon';
-import { MatInputModule } from '@angular/material/input';
-import { MatRadioModule } from '@angular/material/radio';
-import { MatSelectModule } from '@angular/material/select';
-import { MatTabsModule } from '@angular/material/tabs';
+} from "@angular/forms";
+import { MatCardModule } from "@angular/material/card";
+import { ThemePalette } from "@angular/material/core";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatIconModule } from "@angular/material/icon";
+import { MatInputModule } from "@angular/material/input";
+import { MatRadioModule } from "@angular/material/radio";
+import { MatSelectModule } from "@angular/material/select";
+import { MatTabsModule } from "@angular/material/tabs";
 import {
   Color,
   MAT_COLOR_FORMATS,
@@ -21,19 +21,19 @@ import {
   NgxMatColorPickerComponent,
   NgxMatColorPickerInput,
   NgxMatColorToggleComponent,
-} from 'projects/color-picker/src/public-api';
-import { NgxMatHighlightDirective } from '../shared/NgxMatHighlightDirective';
+} from "projects/color-picker/src/public-api";
+import { NgxMatHighlightDirective } from "../shared/NgxMatHighlightDirective";
 
 const CUSTOM_MAT_COLOR_FORMATS: MatColorFormats = {
   display: {
-    colorInput: 'hex8',
+    colorInput: "hex8",
   },
 };
 
 @Component({
-  selector: 'ngx-mat-demo-colorpicker',
-  templateUrl: './demo-colorpicker.component.html',
-  styleUrls: ['./demo-colorpicker.component.scss'],
+  selector: "ngx-mat-demo-colorpicker",
+  templateUrl: "./demo-colorpicker.component.html",
+  styleUrls: ["./demo-colorpicker.component.scss"],
   imports: [
     FormsModule,
     MatCardModule,
@@ -50,21 +50,26 @@ const CUSTOM_MAT_COLOR_FORMATS: MatColorFormats = {
     NgxMatHighlightDirective,
     ReactiveFormsModule,
   ],
-  providers: [{ provide: MAT_COLOR_FORMATS, useValue: CUSTOM_MAT_COLOR_FORMATS }],
+  changeDetection: ChangeDetectionStrategy.Eager,
+  providers: [
+    { provide: MAT_COLOR_FORMATS, useValue: CUSTOM_MAT_COLOR_FORMATS },
+  ],
 })
 export class DemoColorpickerComponent {
   public disabled = false;
-  public color: ThemePalette = 'primary';
+  public color: ThemePalette = "primary";
   public touchUi = false;
 
-  colorCtr: AbstractControl = new FormControl(new Color(0, 255, 255), [Validators.required]);
+  colorCtr: AbstractControl = new FormControl(new Color(0, 255, 255), [
+    Validators.required,
+  ]);
 
   public options = [
-    { value: true, label: 'True' },
-    { value: false, label: 'False' },
+    { value: true, label: "True" },
+    { value: false, label: "False" },
   ];
 
-  public listColors = ['primary', 'accent', 'warn'];
+  public listColors = ["primary", "accent", "warn"];
 
   public code3 = `<mat-form-field>
   <input matInput [ngxMatColorPicker]="picker" [formControl]="colorCtr" [disabled]="disabled">
@@ -76,7 +81,7 @@ export class DemoColorpickerComponent {
 import { Color } from '@hrefcl/color-picker';
 colorCtr: AbstractControl = new FormControl(new Color(255, 243, 0), [Validators.required]);`;
 
-  public code1 = 'npm install --save @hrefcl/color-picker';
+  public code1 = "npm install --save @hrefcl/color-picker";
 
   public code2 = `import { MAT_COLOR_FORMATS, NgxMatColorPickerComponent, NGX_MAT_COLOR_FORMATS }
   from '@hrefcl/color-picker'

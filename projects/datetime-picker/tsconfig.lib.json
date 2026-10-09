@@ -11,7 +11,8 @@
   "angularCompilerOptions": {
     "compilationMode": "partial",
     "strictInjectionParameters": true,
-    "enableResourceInlining": true
+    "enableResourceInlining": true,
+    "strictTemplates": false
   },
   "exclude": [
     "src/test.ts",
